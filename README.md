@@ -89,6 +89,22 @@ myCoin.addBlock(new Block(2, Date.now(), [{ sender: "Bob", receiver: "Charlie", 
 console.log("Is blockchain valid? " + myCoin.isChainValid());
 ```
 
+##Output Screenshots
+Mining the First Block:
+The mining process for the first block is successfully completed with a valid hash, demonstrating the functioning of the blockchain simulation.
+
+Blockchain Validation:
+The blockchain is validated, confirming its integrity and ensuring no tampering has occurred.
+
+![image](https://github.com/user-attachments/assets/99fb8ab1-a6f6-4b79-a3dd-7b3100d3beff)
+
+Tampered Blockchain Output:
+A tampering attempt is made in the blockchain, which is detected during the validation process. The system identifies the affected block and marks the blockchain as invalid.
+
+![image](https://github.com/user-attachments/assets/108916b0-9aca-4b68-831c-afbf0fe0f58c)
+
+
+
 ## Contributing
 
 Feel free to fork this project and submit issues or pull requests. Contributions are welcome!
