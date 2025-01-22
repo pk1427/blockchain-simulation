@@ -1,0 +1,14 @@
+
+{
+  "name": "blockchain-simulation",
+  "version": "1.0.0",
+  "description": "A simple blockchain simulation",
+  "main": "blockchain.js",
+  "scripts": {
+    "start": "node blockchain.js",
+    "test": "node tamper.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}
