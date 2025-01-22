@@ -33,16 +33,15 @@ class Block {
 }
 
 class Blockchain {
-  constructor() {
+  constructor(difficulty = 2) {
     this.chain = [this.createGenesisBlock()];
-    this.difficulty = 2;
+    this.difficulty = difficulty;
   }
 
   createGenesisBlock() {
     return new Block(0, Date.now(), "Genesis Block", "0");
   }
 
-  // Add block method should increment the index and set the correct previousHash
   addBlock(newBlock) {
     newBlock.previousHash = this.chain[this.chain.length - 1].hash;
     newBlock.index = this.chain.length;
@@ -50,7 +49,6 @@ class Blockchain {
     this.chain.push(newBlock);
   }
 
-  // Validate the chain
   isChainValid() {
     for (let i = 1; i < this.chain.length; i++) {
       const currentBlock = this.chain[i];
@@ -72,18 +70,4 @@ class Blockchain {
   }
 }
 
-const myBlockchain = new Blockchain();
-console.log("Mining block 1...");
-myBlockchain.addBlock(
-  new Block(1, Date.now(), [{ sender: "Alice", receiver: "Bob", amount: 50 }])
-);
-
-console.log("Mining block 2...");
-myBlockchain.addBlock(
-  new Block(2, Date.now(), [{ sender: "Bob", receiver: "Charlie", amount: 20 }])
-);
-
-console.log(JSON.stringify(myBlockchain, null, 2));
-console.log("Is blockchain valid? ", myBlockchain.isChainValid());
-
-module.exports = Blockchain;
+module.exports = { Blockchain, Block }; 
