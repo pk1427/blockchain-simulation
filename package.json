@@ -1,4 +1,3 @@
-
 {
   "name": "blockchain-simulation",
   "version": "1.0.0",
@@ -9,6 +8,7 @@
     "test": "node tamper.js"
   },
   "dependencies": {
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0"
   }
 }
