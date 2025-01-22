@@ -69,5 +69,17 @@ class Blockchain {
     return true;
   }
 }
+let myCoin = new Blockchain();
+console.log("Mining block 1...");
+myCoin.addBlock(
+  new Block(1, Date.now(), [{ sender: "Alice", receiver: "Bob", amount: 50 }])
+);
+console.log("Mining block 2...");
+myCoin.addBlock(
+  new Block(2, Date.now(), [{ sender: "Bob", receiver: "Charlie", amount: 20 }])
+);
 
-module.exports = { Blockchain, Block }; 
+console.log("Blockchain: ", JSON.stringify(myCoin, null, 4));
+console.log("Is blockchain valid? " + myCoin.isChainValid());
+
+module.exports = { Blockchain, Block };
